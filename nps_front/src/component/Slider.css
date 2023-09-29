@@ -1,0 +1,25 @@
+@keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .slide-enter {
+    animation: slideInRight 0.5s ease forwards;
+  }
+  
+  .slide-exit {
+    animation: slideInLeft 0.5s ease forwards;
+  }
