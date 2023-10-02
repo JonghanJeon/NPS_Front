@@ -40,7 +40,7 @@ const Slider = () => {
           <TextWrapper>
             <TextContainer>
               <Title>NPS는?</Title>
-              <Sub>NoPiShing 의 약자로 피싱 방지를 돕는 No.1 서비스 입니다.</Sub><br />
+              <Sub>NoPhiShing 의 약자로 피싱 방지를 돕는 No.1 서비스 입니다.</Sub><br />
               <Text>더콜(theCall) 사이트를 통한 번호 검색부터,</Text><br />
               <Text>사용자들간의 정보 공유, 실제 사고 사례 및 교육 영상 시청,</Text><br />  
               <Text>AI 를 활용한 피싱 판단 서비스까지</Text><br />

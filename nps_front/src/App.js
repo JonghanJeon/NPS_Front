@@ -9,6 +9,8 @@ import Main from './page/Main';
 import EduVideo from './page/EduVideo';
 import AI from './page/AI';
 import News from './page/News';
+import ArticleList from './page/ArticleList';
+import ArticleDetail from './page/ArticleDetail';
 
 function App() {
   
@@ -25,6 +27,8 @@ function App() {
             <Route path='/education-video' element={<EduVideo/>}></Route>
             <Route path='/ai-text-analysis' element={<AI/>}></Route>
             <Route path='/news' element={<News/>}></Route>
+            <Route path='/board' element={<ArticleList/>}></Route>
+            <Route path='/board/:id' element={<ArticleDetail/>}></Route>
           </Routes>
         </BrowserRouter>
       </MainContent>
