@@ -11,6 +11,7 @@ import AI from './page/AI';
 import News from './page/News';
 import ArticleList from './page/ArticleList';
 import ArticleDetail from './page/ArticleDetail';
+import ArticleInsert from './page/ArticleInsert';
 
 function App() {
   
@@ -29,6 +30,7 @@ function App() {
             <Route path='/news' element={<News/>}></Route>
             <Route path='/board' element={<ArticleList/>}></Route>
             <Route path='/board/:id' element={<ArticleDetail/>}></Route>
+            <Route path='/board/write' element={<ArticleInsert/>}></Route>
           </Routes>
         </BrowserRouter>
       </MainContent>

@@ -38,7 +38,7 @@ const ArticleList = () => {
     }
 
     return (
-        <><br/>
+        <Box><br/>
         <CommonTextContainer>
             <CommonTitle>게시판</CommonTitle>
             <CommonText>"여러 사람들과 피싱 사례 및 정보를 공유하세요."</CommonText>
@@ -58,14 +58,18 @@ const ArticleList = () => {
         ))}
         <BoardButton>
             <ListButton onClick={() => {
-                navigate("/board");
+                navigate("/board/write");
             }}>글작성</ListButton>
         </BoardButton>
-        </>
+        </Box>
     );
 }
 
 export default ArticleList;
+
+const Box = styled.div`
+    margin-bottom: 5vh;
+`
 
 const BoardContainer = styled.div`
     width: 80%;
@@ -81,6 +85,18 @@ const BoardButton = styled.div`
     width: 80%;
     height: 50px;
     margin: 10px auto;
+    animation: fadeInUp 0.5s ease-in-out;
+
+    @keyframes fadeInUp {
+        0% {
+        opacity: 0;
+        transform: translateY(20px);
+        }
+        100% {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
 `
 
 const ListButton = styled.a`
@@ -152,28 +168,6 @@ const BoardName2 = styled.div`
     text-align: center;
     border-right: 1px solid #BDBDBD;
 `
-
-const FeedContainer = styled.div`
-  max-width: 600px;
-  margin: 0 auto;
-  margin-bottom: 5vh;
-  text-align: center;
-  padding: 20px;
-`;
-
-const FeedItem = styled.div`
-  animation: ${slideUp} 1s ease;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  margin-bottom: 20px;
-  padding: 10px;
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  &:hover{
-      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
-`;
 
 const CommonTitle = styled.h1`
     margin: 0;
