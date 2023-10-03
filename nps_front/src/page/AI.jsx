@@ -2,13 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
 import Button from 'react-bootstrap/Button';
+import axios from "axios";
+import AIModal from "../modal/AIModal";
 
 const AI = () => {
   const [inputText, setInputText] = useState("");
   const [outputText, setOutputText] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleButtonClick = () => {
-    setOutputText(inputText);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
   };
 
   return (
@@ -19,11 +26,9 @@ const AI = () => {
         <CommonText>
           "AI 를 활용한 텍스트 분석으로 피싱을 판별해드립니다."
         </CommonText>
-        <CommonText>
-          
-        </CommonText>
       </CommonTextContainer>
       <Hr />
+      <br /><br /><br />
       <Container>
         <Textarea
           placeholder="통화 내용이나 기타 의심가는 문장을 입력해 주세요."
@@ -31,7 +36,12 @@ const AI = () => {
           onChange={(e) => setInputText(e.target.value)}
         />
         <PushButton onClick={handleButtonClick}>AI 분석</PushButton>
-
+        {modalOpen && (
+          <AIModal
+          data = {inputText}
+          closeModal = {closeModal}
+          />
+        )}
         {outputText && <Output>출력 결과: {outputText}</Output>}
         
       </Container>
@@ -61,16 +71,19 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh; /* 화면 높이에 따라 조절 */
 `;
 
 const Textarea = styled.textarea`
+  font-size: 18px;
   width: 70%;
-  height: 200px;
+  height: 300px;
   padding: 10px;    
   border-radius: 5px;
   margin-bottom: 10px;
   resize: none;
+  &:focus{
+    outline-color: #4287f5;
+  }
 `;
 
 const Output = styled.div`

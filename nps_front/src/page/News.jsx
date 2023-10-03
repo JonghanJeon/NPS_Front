@@ -64,7 +64,7 @@ export default News;
 
 // 스타일드 컴포넌트를 사용하여 컴포넌트 스타일링
 const FeedContainer = styled.div`
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   margin-bottom: 5vh;
   text-align: center;
