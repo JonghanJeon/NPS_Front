@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
-import { AiFillCloseCircle, AiFillCheckCircle, AiFillWarning } from "react-icons/ai";
+import { AiFillCloseCircle, AiFillCheckCircle, AiFillWarning, AiFillAlert } from "react-icons/ai";
 import { useState } from 'react';
 import { useEffect } from 'react';
 import PuffLoader from "react-spinners/PuffLoader";
@@ -43,12 +43,49 @@ function AIModal({data, closeModal}){
                 <>
                 <Fade>
                 <Icon>
-                    <AiFillCloseCircle color='red' size="240"/>
+                    {
+                        result >= 75 ? (
+                            <AiFillAlert color='red' size='240'/>
+                        ) : result >= 50 ? (
+                            <AiFillCloseCircle color='red' size="240"/>
+                        ) : result >= 25 ? (
+                            <AiFillWarning color='#FFE400' size='240'/>
+                        ) : (
+                            <AiFillCheckCircle color='green' size='240'/>
+                        )
+                    }
+                    
                 </Icon>
                 <TextWrapper>
-                    <AIText>{result}% 확률로 보이스피싱입니다.</AIText>
-                    <AIText>경찰서에 연락하세요.</AIText>
-                    <Text>전화사기 110 또는 1379</Text>
+                    {
+                        result >= 75 ? (
+                            <>
+                                <AIText>{result}% 확률로 보이스피싱입니다.</AIText>
+                                <AIText>*경고* 보이스 피싱 입니다.</AIText>
+                                <AIText>즉시 경찰서에 연락하거나 전화를 끊으십시오.</AIText>
+                                <Text>전화사기 110 또는 1379</Text>
+                            </>
+                        ) : result >= 50 ? (
+                            <>
+                                <AIText>{result}% 확률로 보이스피싱입니다.</AIText>
+                                <AIText>*주의* 보이스피싱 위험 단계 입니다.</AIText>
+                                <AIText>보이스피싱 같다면 전화를 끊으십시오.</AIText>
+                                <Text>전화사기 110 또는 1379</Text>
+                            </>
+                        ) : result >= 25 ? (
+                            <>
+                                <AIText>{result}% 확률로 보이스피싱입니다.</AIText>
+                                <AIText>보이스 피싱 의심 단계 입니다.</AIText>
+                                <Text>전화사기 110 또는 1379</Text>
+                            </>
+                        ) : (
+                            <>
+                                <AIText>{result}% 확률로 보이스피싱입니다.</AIText>
+                                <AIText>보이스 피싱 안전 단계 입니다.</AIText>
+                                <Text>전화사기 110 또는 1379</Text>
+                            </>
+                        )
+                    }
                 </TextWrapper>
                 <Close onClick={closeModal}>X</Close>
                 </Fade>
