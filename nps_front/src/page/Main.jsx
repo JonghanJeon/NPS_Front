@@ -30,7 +30,7 @@ const Main = () => {
                         <br />     
                          번호검색
                     </MainButtonBox>
-                    <MainButtonBox>
+                    <MainButtonBox onClick={()=>{navigate("/board")}}>
                         <FaClipboardList size={27} color = '#4B62F1'/>
                         <br />
                         게시판

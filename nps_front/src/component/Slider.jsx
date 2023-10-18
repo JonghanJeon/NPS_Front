@@ -52,7 +52,7 @@ const Slider = () => {
               showArrows={false}
               autoPlay={true}
               infiniteLoop={true}
-              interval={3000}
+              interval={2500}
               showThumbs={false}
               showStatus={false}
               selectedItem={imageData[currentIndex]}
@@ -70,7 +70,7 @@ export default Slider;
 
 const CarouselContainer = styled.div`
   width: 100%; /* 기본 크기는 100% */
-  max-width: 800px; /* 최대 너비 설정 */
+  max-width: 950px; /* 최대 너비 설정 */
   /* height: 100%; 기본 높이 설정 */
   margin: auto auto; /* 가운데 정렬 (선택 사항) */
 
@@ -105,15 +105,15 @@ const TextWrapper = styled.div`
 
 const Title = styled.h1`
     color: #4B62F1;
-    font-size: 18px;
+    font-size: 25px;
 `
 
 const Sub = styled.h1`
   color: #4B62F1;
-  font-size: 13px;
+  font-size: 18px;
 `
 
 const Text = styled.div`
     font-weight: bold;
-    font-size: 10px;
+    font-size: 15px;
 `

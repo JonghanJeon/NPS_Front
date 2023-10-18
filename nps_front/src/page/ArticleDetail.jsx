@@ -22,9 +22,9 @@ const ArticleDetail = () => {
         .then(res => {
             console.log(res);
             console.log("Board Loading Success.");
-            setBoardTitle(res.data[0].title);
-            setBoardName(res.data[0].name);
-            setBoardContent(res.data[0].content);
+            setBoardTitle(res.data.title);
+            setBoardName(res.data.name);
+            setBoardContent(res.data.content);
         })
         .catch(err => {
             console.log("API 호출 에러 ", err);
