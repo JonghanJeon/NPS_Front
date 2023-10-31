@@ -130,26 +130,22 @@ const Fade = styled.div`
 const Container = styled.div`
     width: 800px;
     height: 500px;
-
-    /* 최상단 위치 */
     z-index: 999;
     
-    /* 중앙 배치 */
-    /* top, bottom, left, right 는 브라우저 기준으로 작동한다. */
-    /* translate는 본인의 크기 기준으로 작동한다. */
-    position: absolute;
+    /* Fixed positioning to keep the modal centered */
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
-
-     /* 모달창 디자인 */
+    
+    /* Modal styles */
     background-color: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     border-radius: 8px;
-`
+`;
 
 const Icon = styled.div`
     height: 500px;

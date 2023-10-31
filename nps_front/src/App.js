@@ -54,7 +54,6 @@ const MainContent = styled.div`
 
 const FooterWrapper = styled.footer`
   background-color: #f0f0f0;
-  height: 5vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;

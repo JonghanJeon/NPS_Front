@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "../component/Slider";
+import AI from "./AI.jsx";
 import {FaSistrix, FaClipboardList, FaFlag, FaBrain, FaPlay} from "react-icons/fa"
 import { useNavigate } from "react-router-dom";
 
@@ -24,6 +25,8 @@ const Main = () => {
                     <Slider/>
                 </SlideWrapper>
                 <br />
+                <AI/>
+                <hr/>
                 <ButtonWrapper>
                     <MainButtonBox onClick={() => navigate("/number-search")}>
                         <FaSistrix size={27} color = '#4B62F1'/>   
